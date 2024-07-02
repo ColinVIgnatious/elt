@@ -2,9 +2,8 @@
 import './App.css'
 import { Button } from "@/components/ui/button"
 import {
-  Table,
+  Table,TableCaption,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -27,24 +26,27 @@ function App() {
 
   return (
     <>
-    <div className="w-[1200px]">
+    <div className="w-[1200px] border">
       <AspectRatio ratio={16 / 9}>
+     
+      <Table className="table-auto">
+      <TableCaption className="caption-top">
       <div className="flex justify-between items-center mb-4">
             <div className="left-items">
-              <label className="block text-[#222124] py-2" htmlFor="">
-
+              <label className="block text-[#313336] py-2 font-bold h-5 font-sf-pro" htmlFor="">
                 Upcoming classes
               </label>
-              <label className="block text-gray-600 py-2" htmlFor="">
+              <label className="block text-[#5F5F61] py-2 h-4 font-inter" htmlFor="">
                 For next 7 days
               </label>
+
             </div>
             <div className="right-items flex items-center space-x-2">
               <Label htmlFor="booked">Booked only</Label>
               <Checkbox id="booked" />
             </div>
           </div>
-      <Table>
+      </TableCaption>
   <TableHeader>
     <TableRow>
       <TableHead className="w-[300px]">Class Name</TableHead>
@@ -53,17 +55,17 @@ function App() {
     </TableRow>
   </TableHeader>
   <TableBody>
-    <TableRow>
+    <TableRow className="h-17">
       <TableCell className="font-medium">INV001</TableCell>
       <TableCell>
        
-       <Container className="mt-4">
-      <Row className="justify-content-center">
-        <Col xs={12} sm={6} md={4}>
+       {/* <Container className="mt-4"> */}
+      {/* <Row className="justify-content-center">
+        <Col xs={12} sm={6} md={4}> */}
           <NameCard avatarUrl={user.avatarUrl} name={user.name} details={user.details} />
-        </Col>
-      </Row>
-    </Container>
+        {/* </Col>
+      </Row> */}
+    {/* </Container> */}
     </TableCell>
       <TableCell className="text-right"><Button variant="outline">Book Now</Button></TableCell>
     </TableRow>
